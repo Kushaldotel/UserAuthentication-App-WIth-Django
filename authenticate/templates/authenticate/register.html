@@ -1,0 +1,18 @@
+{% extends 'authenticate/base.html' %}
+{% block body %}
+<h2>
+    Welcome to the Registration Page.
+</h2>
+<form method="POST" action="{% url 'register' %}">
+    {% csrf_token %}
+    {% if form.errors %}
+    <p>
+        You have some errors while filling the form.
+    </p>
+    {% endif %}
+    {{form.as_p}}
+
+    <input type="submit" value="Register" class="btn btn-secondary">
+
+</form>
+{% endblock body %}

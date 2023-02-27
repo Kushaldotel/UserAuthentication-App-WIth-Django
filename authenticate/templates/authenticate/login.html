@@ -1,0 +1,24 @@
+{% extends 'authenticate/base.html' %}
+{% block body %}
+<h1>
+    Welcome to the login page.
+</h1>
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <form style="width: 300px; padding: 20px; border: 1px solid #ccc; border-radius: 5px;" method="POST">
+        {% csrf_token %}
+      <h2 style="text-align: center;">Login</h2>
+      <div style="margin-bottom: 10px;">
+        <label for="username" style="display: block;">Username</label>
+        <input type="text" id="username" name="username" style="width: 100%; padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+      <div style="margin-bottom: 10px;">
+        <label for="password" style="display: block;">Password</label>
+        <input type="password" id="password" name="password" style="width: 100%; padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+      <button type="submit" style="width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">Login</button>
+    </form>
+  </div>
+  
+
+{% endblock body %}
